@@ -46,6 +46,9 @@ https://juejin.cn/post/7003220566698098695
 ### Maven
 https://blog.csdn.net/zp357252539/article/details/80392101(mvn archetype:generate -DgroupId=com.tsj.oj -DartifactId=javaOj -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false)
 
+### jUnit
+https://www.jianshu.com/p/e72c5595710a
+
 ## System Logic
 
 ### 账号绑定

@@ -4,35 +4,35 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
+public class AppTest extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+    private App app = null;
+    
+    public AppTest(){}
+    public AppTest(String name){
+        super(name);
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Override
+	public void setUp()
+	{
+		app = new App();
+	}
+
+    @Override
+	public void tearDown(){}
+
+    public void testAdd(){
+        app=new App();
+        assertEquals(14, app.add(5, 9));
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+	public static Test suite(){
+        TestSuite testSuite=new TestSuite("All Test From TestCaseExample");
+        testSuite.addTestSuite(AppTest.class);
+        Test test = TestSuite.createTest(AppTest.class, "testAdd");
+        testSuite.addTest(test);
+        return testSuite;
     }
+
 }
