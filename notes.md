@@ -55,3 +55,8 @@ http://blog.itpub.net/31557372/viewspace-2671003/
 ## Experience For Dev
 https://blog.csdn.net/sinat_15155817/article/details/115214679
 
+## System Design
+
+### api design
+https://zhuanlan.zhihu.com/p/56955812
+
