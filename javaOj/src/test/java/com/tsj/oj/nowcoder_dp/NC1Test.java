@@ -1,12 +1,12 @@
-// package com.tsj.oj;
+// package com.tsj.oj.nowcoder_dp;
 
 // import junit.framework.Test;
 // import junit.framework.TestCase;
 // import junit.framework.TestSuite;
 
-// public class PalindromeNumTest extends TestCase{
-//     public PalindromeNumTest(){}
-//     public PalindromeNumTest(String name){
+// public class NC1Test extends TestCase{
+//     public NC1Test(){}
+//     public NC1Test(String name){
 //         super(name);
 //     }
 
@@ -17,17 +17,17 @@
 //     @Override
 // 	public void tearDown(){}
 
-//     public void testIsPalindrome(){
-//         assertEquals(true, PalindromeNum.isPalindrome(100001));
+//     public void testMaxSubArr(){
+//         assertEquals(5, NC1.maxSubArr(3, new int[]{3, -4, 5}));
 //     }
 
 // 	public static Test suite(){
 //         TestSuite testSuite=new TestSuite("All Test From TestCaseExample");
 //         // 第一种方法
-//         // testSuite.addTestSuite(PalindromeNumTest.class);
+//         // testSuite.addTestSuite(NC1Test.class);
 //         // 第二种方法
-//         // Test test = TestSuite.createTest(PalindromeNumTest.class, "testIsPalindrome");
-//         // testSuite.addTest(test);
+//         Test test = TestSuite.createTest(NC1Test.class, "testMaxSubArr");
+//         testSuite.addTest(test);
 //         return testSuite;
 //     }
 // }
