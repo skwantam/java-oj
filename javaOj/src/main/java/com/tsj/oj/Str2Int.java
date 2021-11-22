@@ -37,7 +37,7 @@ public class Str2Int{
             System.out.println(c + " start=" + start);
         }
         
-        //可终止状态：2，3，4，7，8
+        //可接受状态：2，3，4，7，8
         return start == 2 || start == 3 || start == 4 || start == 7 || start == 8;
     }
 }

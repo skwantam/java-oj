@@ -59,7 +59,7 @@ https://www.jianshu.com/p/e72c5595710a
 http://blog.itpub.net/31557372/viewspace-2671003/
 
 
-## Experience For Dev
+## Experience in Dev
 
 https://blog.csdn.net/sinat_15155817/article/details/115214679
 
@@ -112,6 +112,45 @@ call insert_english_name();
 constraint fk_CooperationTypeUnit_CooperationType_On_ID
         foreign key (COOPERATION_TYPE_ID) 
 		references CooperationType (ID)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ```sql
