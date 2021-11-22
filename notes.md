@@ -52,6 +52,10 @@ https://blog.csdn.net/zp357252539/article/details/80392101(mvn archetype:generat
 ### jUnit
 https://www.jianshu.com/p/e72c5595710a
 
+### Mybatis
+https://blog.csdn.net/u010502101/article/details/79053980
+https://blog.csdn.net/u010502101/article/details/79053980
+https://blog.csdn.net/weixin_43822795/article/details/96587755
 
 ## System Logic
 
@@ -113,6 +117,8 @@ constraint fk_CooperationTypeUnit_CooperationType_On_ID
         foreign key (COOPERATION_TYPE_ID) 
 		references CooperationType (ID)
 
+
+http://localhost:11224/swagger-ui/index.html#/
 
 
 
@@ -210,3 +216,24 @@ alter table CooperationType add column SERVICE_TYPE_EN varchar(64) not null defa
 alter table CooperationType add column QUANTIFIER_EN varchar(64) not null default '' comment '量词英文名' after QUANTIFIER;
 ```
 
+```java
+default void saveOrUpdateKolPersonalImInfo(Long userId, KolBasicPersonalInfoAndGdprParam.ImInfo imInfo){
+   KolPersonalImInfo nowKolPersonalImInfo = this.selectOne(Wrappers.<KolPersonalImInfo>lambdaQuery()
+            .eq(KolPersonalImInfo::getUserId, userId)
+            .eq(KolPersonalImInfo::getImType, imInfo.getImType()));
+   if(null != nowKolPersonalImInfo){
+      nowKolPersonalImInfo.setImNum(imInfo.getImNum());
+   }else{
+      KolPersonalImInfo.KolPersonalImInfoBuilder kolPersonalImInfoBuilder = KolPersonalImInfo.builder()
+               .userId(userId)
+               .imType(imInfo.getImType())
+               .imNum(imInfo.getImNum())
+               .createTime(LocalDateTime.now())
+               .lastModTime(LocalDateTime.now());
+      if( IM_TYPE_OTHERS == imInfo.getImType()){
+            kolPersonalImInfoBuilder.imNameOthers(imInfo.getImType().toString());
+      }
+      this.insert(kolPersonalImInfoBuilder.build());
+   }
+}
+```
