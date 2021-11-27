@@ -12,3 +12,11 @@ Host myHostName
     HostName github.com
     IdentityFile /path/to/id_rsa # 可用相对路劲
 ```
+
+# Maven 
+## 指定运行类
+mvn exec:java -Dexec.mainClass="test.TestMain"
+## 指定测试类/方法
+mvn test -Dtest=tsj.deserializer.DeserializerProcessTest#fun6
+## 新建项目
+mvn archetype:generate
