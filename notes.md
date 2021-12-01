@@ -45,6 +45,7 @@ https://juejin.cn/post/7003220566698098695
 
 ### Maven
 https://blog.csdn.net/zp357252539/article/details/80392101(mvn archetype:generate -DgroupId=com.tsj.oj -DartifactId=javaOj -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false)
+https://blog.csdn.net/ibmeye/article/details/50705663 
 
 ### jUnit
 https://www.jianshu.com/p/e72c5595710a
@@ -152,7 +153,7 @@ call fillCooperatonTypeUnit();
 eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDAiLCJpZCI6MTAwMDAsInR5cGUiOjEsImV4cCI6MTYzNzk1OTA4MTUxOSwiY3JlYXRlZCI6MTYzNzkyMzA4MTUxOX0.4cpv7zVggZcSVwgbOUBeHEp8-Pyhvy1aXYxMfBu1KF91yBWigT6e0lv1iz_b4seU9zcf4wFKZsvOHQBhLhJVOw
 10000 kol10000
 
-eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDIiLCJpZCI6MTAwMDIsInR5cGUiOjEsImV4cCI6MTYzODI3NDY4MTUwNywiY3JlYXRlZCI6MTYzODIzODY4MTUwN30.IT4uawIn_-y_DV-wj2m1E-rG3_rqpgS5trr-sZ2qVcml-HEMNdpL7m-wgL16hQfNAH2S1Qn-p9diZ1Ts0f9ipg
+eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDIiLCJpZCI6MTAwMDIsInR5cGUiOjEsImV4cCI6MTYzODM1ODk3NTU3OCwiY3JlYXRlZCI6MTYzODMyMjk3NTU3OH0.lnyHvRz1pnvsjKNlGKU4e8crGlvtbT5QwbR4gLpkqdzt-JmGUqqJqvEFJt50fa_pnV99QRchSKVlmwp1r_YdOg
 10002 kol10002
 
 
@@ -309,7 +310,6 @@ List<Long> toDeleteCont = oldContTags.stream().filter(tag -> ! newContTags.conta
    <include refid="commonCondition"/>
 </select>
 ```
-
 
 ```sql
 <resultMap id="OnlineDetailResultMap" type="outfox.ead.kolplatform.pojo.vo2.OrderOnlineDetailVo">
@@ -587,7 +587,6 @@ CREATE TABLE `KolPersonalInfo` (
                    .prices(quote.getPrice()).build());
        }
 ```
-
 
 ```java
 Long socialMediaAccountId = kolSocialMediaAccountMapper.getByUserId(userId).getId();
