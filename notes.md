@@ -6,6 +6,7 @@ http://www.ruanyifeng.com/blog/2015/12/git-workflow.html (GitHub流程)
 http://www.ruanyifeng.com/blog/2015/08/git-use-process.html
 https://blog.carbonfive.com/always-squash-and-rebase-your-git-commits/
 https://www.yiibai.com/git/git_pull.html
+https://blog.csdn.net/u014643282/article/details/103598756
 
 #### git Server
 git init --bare sample.git
@@ -64,6 +65,7 @@ https://blog.csdn.net/qq_36951116/article/details/85082716
 
 ### Cookie记录首次登录
 https://www.jianshu.com/p/df53fb89da90
+https://www.jianshu.com/p/5f13383b47de
 
 ### 账号绑定
 http://blog.itpub.net/31557372/viewspace-2671003/
@@ -77,6 +79,11 @@ https://blog.csdn.net/sinat_15155817/article/details/115214679
 
 ### api design
 https://zhuanlan.zhihu.com/p/56955812
+
+
+
+## Network, Security and Protocol
+https://zhuanlan.zhihu.com/p/147768058
 
 
 ## Mysql
@@ -157,14 +164,14 @@ https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html
 eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDAiLCJpZCI6MTAwMDAsInR5cGUiOjEsImV4cCI6MTYzNzk1OTA4MTUxOSwiY3JlYXRlZCI6MTYzNzkyMzA4MTUxOX0.4cpv7zVggZcSVwgbOUBeHEp8-Pyhvy1aXYxMfBu1KF91yBWigT6e0lv1iz_b4seU9zcf4wFKZsvOHQBhLhJVOw
 10000 kol10000
 
-eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDIiLCJpZCI6MTAwMDIsInR5cGUiOjEsImV4cCI6MTYzODU0ODIyNDc4OSwiY3JlYXRlZCI6MTYzODUxMjIyNDc4OX0.mmMizK-UYrXM_pmqKo5gxdR5PeXb3ng5rtZW_TsECo2smmaOauUKO_ONoK6CC9aDk8BTfCs2a6HLlA9XMnWjTw
+eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoic2VsbGVyMTAwNjM0IiwiaWQiOjEwMDAyLCJ0eXBlIjoxLCJleHAiOjE2Mzg4MDAzMzc4MDcsImNyZWF0ZWQiOjE2Mzg3NjQzMzc4MDd9.18fetYHku604qpxkuyS4WJ026lZuCOrkFLX8yH2dsuOASk8QeNwH5SFShDznY-TRemLqqa5SkHm_oomiWRuC5w
 10002 kol10002
 
 
 ## OTHERS
-
+https://wiki.jikexueyuan.com/list/redis/
 http://localhost:11224/swagger-ui/index.html#/
-
+Chromium 86.0.4240.198
 
 ```sql   
 # 修改

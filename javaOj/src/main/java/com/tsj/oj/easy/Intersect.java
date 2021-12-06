@@ -71,6 +71,8 @@ public class Intersect{
         // String[] strs = "TikTok,,,,,,YouTube".split(",");
         // for(String s : strs) System.out.println(s);
         // System.out.println(new RationalNumber(7,6).fraction2Decimal());
+        List<Integer> tmp = new ArrayList<Integer>(){{add(1); add(1); add(1);}};
+        System.out.println(tmp.size() > new HashSet<>(tmp).size());
     }
 }
 
