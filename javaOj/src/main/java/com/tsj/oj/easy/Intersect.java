@@ -1,6 +1,7 @@
 // package com.tsj.oj.easy;
 import java.util.*;
 import java.util.stream.*;
+import java.lang.*;
 
 public class Intersect{
 
@@ -64,6 +65,7 @@ public class Intersect{
         // Map<Integer, Integer> map = new HashMap<Integer, Integer>(){{put(1,1); put(2,1); put(3,2);}};
         // List<Integer> list = new ArrayList<>(new HashSet<>(map.values()));
         // System.out.println(list);
+        System.out.println(new RationalNumber(7,6).fraction2Decimal());
     }
 }
 
@@ -104,5 +106,54 @@ class IdTree{
             }
         }
         return null;
+    }
+}
+
+class RationalNumber{
+    private int numerator;
+    private int denominator;
+
+    public RationalNumber(int numerator, int denominator){
+        this.numerator = numerator;
+        this.denominator = denominator;    
+    }
+
+    public String fraction2Decimal(){
+        if(denominator < 0) return null;
+        
+        int[] tmp;
+        StringBuilder sb = new StringBuilder();
+        if((numerator < 0 && denominator >0 ) || (numerator > 0 && denominator < 0 )){
+            sb.append('-');
+        }
+        numerator = (int)Math.abs(numerator);
+        denominator = (int)Math.abs(denominator);
+        tmp = divmod(numerator, denominator);
+        if(tmp[1] == 0){
+            return sb.append(tmp[0]).toString();
+        }    
+        sb.append(tmp[0]);
+        sb.append('.');
+        List<Integer> seen = new ArrayList<>();
+        boolean finite = false;
+        while(!seen.contains(tmp[1])){
+            if(tmp[1] == 0) {
+                finite = true;
+                break;
+            }
+            seen.add(tmp[1]);
+            tmp = divmod(tmp[1]*10, denominator);
+            sb.append(tmp[0]);
+        }
+        if(!finite){
+            int index = seen.indexOf(tmp[1]);
+            sb.insert(index+2, '(');
+            sb.append(')');
+        }
+        return sb.toString();
+    }
+
+    private int[] divmod(int a, int b){
+        return new int[]{a/b, a%b};
     }
 }

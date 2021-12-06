@@ -1,4 +1,4 @@
-package com.tsj.oj.guava_use;
+package com.tsj.oj.guava_test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
