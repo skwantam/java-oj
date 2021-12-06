@@ -62,12 +62,14 @@ https://blog.csdn.net/qq_36951116/article/details/85082716
 
 ## System Logic
 
+### Cookie记录首次登录
+https://www.jianshu.com/p/df53fb89da90
+
 ### 账号绑定
 http://blog.itpub.net/31557372/viewspace-2671003/
 
 
 ## Experience in Dev
-
 https://blog.csdn.net/sinat_15155817/article/details/115214679
 
 
@@ -148,47 +150,15 @@ call fillCooperatonTypeUnit();
 ```
 
 
-
+## Linux
+https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html
 
 
 eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDAiLCJpZCI6MTAwMDAsInR5cGUiOjEsImV4cCI6MTYzNzk1OTA4MTUxOSwiY3JlYXRlZCI6MTYzNzkyMzA4MTUxOX0.4cpv7zVggZcSVwgbOUBeHEp8-Pyhvy1aXYxMfBu1KF91yBWigT6e0lv1iz_b4seU9zcf4wFKZsvOHQBhLhJVOw
 10000 kol10000
 
-eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDIiLCJpZCI6MTAwMDIsInR5cGUiOjEsImV4cCI6MTYzODQ2OTcxMDc5MSwiY3JlYXRlZCI6MTYzODQzMzcxMDc5MX0.-THqrF1aBI8h9RACMGdCmuNaIeeWLAQuPuH4ZZyOAR8WIGf56uAx3tI1SzgO4r3M-hHe_AARMhHRJ6OIndVHFw
-
+eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDIiLCJpZCI6MTAwMDIsInR5cGUiOjEsImV4cCI6MTYzODU0ODIyNDc4OSwiY3JlYXRlZCI6MTYzODUxMjIyNDc4OX0.mmMizK-UYrXM_pmqKo5gxdR5PeXb3ng5rtZW_TsECo2smmaOauUKO_ONoK6CC9aDk8BTfCs2a6HLlA9XMnWjTw
 10002 kol10002
-
-Map<Integer, String> typeNumMap = new HashMap<>();
-        for(KolBasicPersonalInfoAndGdprParam.ImInfo imInfo : basicPersonalInfo.getImInfos()){
-            Integer type = imInfo.getImType();
-            String num = imInfo.getImNum();
-            if(typeNumMap.containsKey(type) && typeNumMap.get(type).equals(num)){
-                throw new CustomException(ExceptionType.HTTP_400, "Repeated IM Account");
-            }
-            typeNumMap.put(type, num);
-        }
-
-
-@ApiModelProperty(value = "量词")
-    @TableField("QUANTIFIER")
-    private String quantifier;
-
-    Map<Long, Long> typeUnitMap = newTypes.stream()
-                .collect(Collectors.toMap(type -> type.getCooperationTypeId(), type -> cooperationTypeUnitMapper.getByCooperationTypeIdAndSituation(type.getCooperationTypeId(), UNIT_SELF_QUOTE).getId()));
-        if (null == typeUnitMap) throw new CustomException(ExceptionType.HTTP_400, "Unsopported Service Type");
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## OTHERS

@@ -64,6 +64,11 @@ public class Intersect{
         // Map<Integer, Integer> map = new HashMap<Integer, Integer>(){{put(1,1); put(2,1); put(3,2);}};
         // List<Integer> list = new ArrayList<>(new HashSet<>(map.values()));
         // System.out.println(list);
+        // List<Integer> test = new ArrayList<>();
+        // List<Integer> test1 = test.stream().filter(x -> x > 1).collect(Collectors.toList());
+        // System.out.println(test1);
+        String[] strs = "TikTok,,,,,,YouTube".split(",");
+        for(String s : strs) System.out.println(s);
     }
 }
 
