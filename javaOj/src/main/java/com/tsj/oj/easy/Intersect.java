@@ -75,9 +75,10 @@ public class Intersect{
         // System.out.println(tmp.size() > new HashSet<>(tmp).size());
         // Date date = new Date(1670465727L * 1000);
         // System.out.println(date.toString());
-        String template = "{\"facets\":[\"product_id\"],\"filters\":{\"product_id\":{\"equal\":%d}},\"fields\":{\"product_id\":{\"fields\":[\"publisher_id\", \"category_id\", \"package_name\"],\"category_id\":{\"fields\":[\"name\"]},\"publisher_id\":{\"fields\":[\"website\",\"company_id\"],\"company_id\":{\"fields\":[\"country_code\",\"website\"]}}}}}";
-        String fill = String.format(template, 233333L);
-        System.out.println(fill);
+        // String template = "{\"facets\":[\"product_id\"],\"filters\":{\"product_id\":{\"equal\":%d}},\"fields\":{\"product_id\":{\"fields\":[\"publisher_id\", \"category_id\", \"package_name\"],\"category_id\":{\"fields\":[\"name\"]},\"publisher_id\":{\"fields\":[\"website\",\"company_id\"],\"company_id\":{\"fields\":[\"country_code\",\"website\"]}}}}}";
+        // String fill = String.format(template, 233333L);
+        // System.out.println(fill);
+        System.out.println("hhh" + "");
     }
 }
 
