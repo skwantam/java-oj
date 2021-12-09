@@ -159,7 +159,7 @@ call fillCooperatonTypeUnit();
 
 ## Linux
 https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html
-
+https://zhongqi2513.blog.csdn.net/article/details/78613768
 
 eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDAiLCJpZCI6MTAwMDAsInR5cGUiOjEsImV4cCI6MTYzNzk1OTA4MTUxOSwiY3JlYXRlZCI6MTYzNzkyMzA4MTUxOX0.4cpv7zVggZcSVwgbOUBeHEp8-Pyhvy1aXYxMfBu1KF91yBWigT6e0lv1iz_b4seU9zcf4wFKZsvOHQBhLhJVOw
 10000 kol10000
@@ -171,7 +171,7 @@ eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoic2VsbGVyMTAwNjM0IiwiaWQiOjEwMDAyLCJ0eXBlIjoxLCJ
 ## OTHERS
 https://wiki.jikexueyuan.com/list/redis/
 http://localhost:11224/swagger-ui/index.html#/
-Chromium 86.0.4240.198
+https://matrix.corp.youdao.com/nginx/domain
 
 ```sql   
 # 修改
@@ -542,6 +542,76 @@ CREATE TABLE `KolPersonalInfo` (
   PRIMARY KEY (`ID`),
   UNIQUE KEY `uk_id_type` (`COOPERATION_TYPE_ID`,`SITUATION`)
 ) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COMMENT='社媒合作类型的报价单位表' 
+```
+
+```sql
+CREATE TABLE `StoredKol` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `USER_ID` bigint(20) NOT NULL COMMENT '储备KOL的用户id',
+  `INTERMEDIARY_USER_ID` bigint(20) DEFAULT NULL COMMENT '媒介人的用户id',
+  `AVATAR_URL` varchar(500) NOT NULL DEFAULT '' COMMENT '头像地址',
+  `NICKNAME` varchar(200) NOT NULL DEFAULT '' COMMENT '昵称',
+  `KOL_STATUS` tinyint(4) NOT NULL DEFAULT '1' COMMENT 'KOL状态: 1-未处理 2-不合适 3-储备-有IM 4-储备-无IM',
+  `HOME_PAGE_URL` varchar(500) NOT NULL COMMENT '主页',
+  `country` varchar(100) NOT NULL DEFAULT '' COMMENT '国家',
+  `FAN_NUM` bigint(20) NOT NULL DEFAULT '0' COMMENT '粉丝数',
+  `AVG_WATCH_COUNT` bigint(20) NOT NULL DEFAULT '0' COMMENT '平均观看量',
+  `DESCRIPTION` text COMMENT '简介',
+  `CATEGORY_SORT` varchar(255) NOT NULL DEFAULT '' COMMENT '内容类别',
+  `MALE_FAN_RATIO` decimal(5,2) DEFAULT NULL COMMENT '男性粉丝百分比，40.12表示40.12%',
+  `MAIL` varchar(255) NOT NULL DEFAULT '' COMMENT '邮箱信息',
+  `MAIL_ENCRYPT` varchar(1023) NOT NULL DEFAULT '' COMMENT '邮箱，加密字段',
+  `INVITE_AT` date DEFAULT NULL COMMENT '发出邀请日期',
+  `OBTAIN_IM_AT` date DEFAULT NULL COMMENT '获取IM号码日期',
+  `REMARK` varchar(1000) NOT NULL DEFAULT '' COMMENT '备注',
+  `BUSINESS_COOPERATION_OVERVIEW` text COMMENT '商业合作概况',
+  `QUOTE` varchar(200) NOT NULL DEFAULT '' COMMENT '报价',
+  `KOL_CASE` varchar(1000) NOT NULL DEFAULT '' COMMENT 'CASE',
+  `IM_TYPE` tinyint(4) DEFAULT NULL COMMENT 'IM形式: 1-WhatsApp 2-Line 3-Facebook Messenger 4-电话号码 5-Zalo 6-KAKAO TALK 7-VK 8-Skype 9-QQ 10-WeChat 11-Others',
+  `IM` varchar(100) NOT NULL DEFAULT '' COMMENT 'IM号码',
+  `IM_ENCRYPT` varchar(1023) NOT NULL DEFAULT '' COMMENT 'IM号码，加密字段',
+  `ASSIGN_AT` timestamp(3) NULL DEFAULT NULL COMMENT '分配给媒介人的时间',
+  `SOURCE` tinyint(4) NOT NULL COMMENT '来源: 1-自拓 2-普通代理 3-爬虫 4-独家代理 5-探索爬虫',
+  `INTERMEDIARY_NAME` varchar(100) NOT NULL DEFAULT '' COMMENT '媒介人名字',
+  `OP_STATUS` tinyint(4) NOT NULL DEFAULT '1' COMMENT '逻辑删除: 0-删除 1-有效',
+  `UPDATE_USER_ID` bigint(20) DEFAULT '0' COMMENT '最新操作的管理员userId',
+  `CREATE_USER_ID` bigint(20) DEFAULT '0' COMMENT '创建管理员userId',
+  `PLATFORM` varchar(50) NOT NULL DEFAULT '' COMMENT 'KOL 社交媒体平台',
+  `AM_USER_ID` bigint(20) DEFAULT NULL COMMENT '跟进运营用户id',
+  `AM_NAME` varchar(200) DEFAULT '' COMMENT '跟进运营用户名字',
+  `KOL_LEVEL` int(10) DEFAULT '0' COMMENT 'kol评级--0表示尚未评级；1表示A级别；2表示B级别；3表示C级别；4表示S级别',
+  `SALE_QUOTE` varchar(255) NOT NULL DEFAULT '' COMMENT '销售报价',
+  `LANGUAGE_CODE` varchar(63) DEFAULT '' COMMENT '语言类别代码',
+  `SALE_CASE` varchar(1023) DEFAULT '' COMMENT '售前case',
+  `LIKES` bigint(20) NOT NULL DEFAULT '0' COMMENT '喜欢/点赞数',
+  `WATCH` bigint(20) NOT NULL DEFAULT '0' COMMENT '观看量',
+  `MEDIA_COUNT` bigint(20) NOT NULL DEFAULT '0' COMMENT '发布内容数',
+  `IF_ASSIGN` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否分配: 0-分配 1-不需要分配 但需要识别语言 2-不分配',
+  `QUOTE_DATE` date DEFAULT NULL COMMENT '报价日期',
+  `REFUSE_INVITE` tinyint(1) DEFAULT '1' COMMENT '是否拒绝邀请邮件',
+  `SEND_INVITE_TIMES` tinyint(4) NOT NULL DEFAULT '0' COMMENT '邀请邮件已发送次数',
+  `LAST_INVITE_TIME` timestamp NULL DEFAULT NULL COMMENT '邮件最后一次发送时间',
+  `TAG_LOCKED` tinyint(4) NOT NULL DEFAULT '0' COMMENT '标签审核状态， 0-未在审核， 1-待审核确认',
+  `AM_ASSIGN_AT` timestamp(3) NULL DEFAULT NULL COMMENT '分配给运营的时间',
+  `MCN_QUOTE` varchar(511) DEFAULT NULL COMMENT 'MCN报价',
+  `IS_IMPORT_BY_MCN` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否由MCN代理导入，1-是，0-否',
+  `FANS_DISTRIBUTION_COUNTRY` varchar(2046) NOT NULL DEFAULT '' COMMENT '粉丝的国家分布，json格式',
+  `FANS_DISTRIBUTION_AGE` varchar(511) NOT NULL DEFAULT '' COMMENT '粉丝的年龄分布，json格式',
+  `FANS_DISTRIBUTION_GENDER` varchar(255) NOT NULL DEFAULT '' COMMENT '粉丝的性别分布，json格式',
+  `NEED_CRAWL` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否由MCN代理导入，1-是，0-否',
+  `KOL_TYPE` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'KOL账户类型 0 - 普通账号 1 - 官方账号 2 - 违禁账号',
+  `BAN_REASON` varchar(63) NOT NULL DEFAULT '' COMMENT '违禁原因',
+  `COOPERATION_TIMES` int(5) NOT NULL DEFAULT '0' COMMENT '合作次数，指该kol和我们平台的合作次数',
+  `LAST_30_MEDIA_AVG_WATCH_COUNT` decimal(15,2) DEFAULT NULL COMMENT '该kol近30条媒体的平均观看数',
+  `LAST_30_MEDIA_AVG_REMARK_COUNT` decimal(15,2) DEFAULT NULL COMMENT '该kol近30条媒体的平均评论数',
+  `LAST_30_MEDIA_AVG_LIKE_COUNT` decimal(15,2) DEFAULT NULL COMMENT '该kol近30条媒体的平均点赞数',
+  `LAST_30_MEDIA_AVG_REPOST_COUNT` decimal(15,2) DEFAULT NULL COMMENT '该kol近30条媒体的平均转发数',
+  `LAST_30_MEDIA_AVG_INTERACTION_RATE` decimal(15,4) DEFAULT NULL COMMENT '该kol近30条媒体的平均互动率',
+  `LAST_MOD_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `uk_home_page_url` (`HOME_PAGE_URL`),
+  UNIQUE KEY `USER_ID` (`USER_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=36228 DEFAULT CHARSET=utf8mb4 COMMENT='储备KOL信息表 | jizhch | 2020-11-12'
 ```
 
 ```java
