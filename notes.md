@@ -167,11 +167,26 @@ eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoia29sMTAwMDAiLCJpZCI6MTAwMDAsInR5cGUiOjEsImV4cCI
 eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoic2VsbGVyMTAwNjM0IiwiaWQiOjEwMDAyLCJ0eXBlIjoxLCJleHAiOjE2Mzg4MDAzMzc4MDcsImNyZWF0ZWQiOjE2Mzg3NjQzMzc4MDd9.18fetYHku604qpxkuyS4WJ026lZuCOrkFLX8yH2dsuOASk8QeNwH5SFShDznY-TRemLqqa5SkHm_oomiWRuC5w
 10002 kol10002
 
+```sql
+select t1.user_id as kolId, t1.likes, t1.dislikes, t1.view as views, t1.comment as `comment-count`, concat('https://www.youtube.com/watch?v=', t1.id) as vedio_url 
+from kol_media t1 inner join (
+    select max(timestamp) as timestamp, id
+    from kol_media
+    group by id
+) t2 on t1.timestamp = t2.timestamp and t1.id = t2.id
+order by t1.user_id
+```
 
 ## OTHERS
 https://wiki.jikexueyuan.com/list/redis/
 http://localhost:11224/swagger-ui/index.html#/
 https://matrix.corp.youdao.com/nginx/domain
+http://zj204.corp.yodao.com:8088/cluster/scheduler
+http://zeppelin.corp.youdao.com/#/
+https://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html#rm
+http://azkaban-ead.inner.youdao.com/hdfs
+http://eadata2-hdfs.inner.youdao.com/explorer.html#/
+https://confluence.inner.youdao.com/pages/viewpage.action?pageId=103591458
 
 ```sql   
 # 修改
@@ -692,4 +707,15 @@ for (KolSocialMediaAccountParam.CooperationType cooperationType : newTypes) {
    }
 }
 kolSelfQuoteMapper.deleteBatch(userId, socialMediaAccountId, toDeleteTypes);
+```
+
+```java
+spark.sql(
+    """select t2.user_id as kolId, t2.likes, t2.dislikes, t2.view as views, t2.comment as `comment-count`, concat('https://www.youtube.com/watch?v=', t2.id) as vedio_url 
+    from (
+        select max(timestamp) as timestamp, id
+        from witake_media
+        group by id
+    ) t1 inner join witake_media t2 on t1.timestamp = t2.timestamp and t1.id = t2.id
+    """).write.csv("hdfs://eadata-hdfs/disk2/video_info4.csv")
 ```
