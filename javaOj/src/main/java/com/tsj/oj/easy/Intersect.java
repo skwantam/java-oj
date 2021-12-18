@@ -65,7 +65,20 @@ public class Intersect{
         // Map<Integer, Integer> map = new HashMap<Integer, Integer>(){{put(1,1); put(2,1); put(3,2);}};
         // List<Integer> list = new ArrayList<>(new HashSet<>(map.values()));
         // System.out.println(list);
-        System.out.println(new RationalNumber(7,6).fraction2Decimal());
+        // List<Integer> test = new ArrayList<>();
+        // List<Integer> test1 = test.stream().filter(x -> x > 1).collect(Collectors.toList());
+        // System.out.println(test1);
+        // String[] strs = "TikTok,,,,,,YouTube".split(",");
+        // for(String s : strs) System.out.println(s);
+        // System.out.println(new RationalNumber(7,6).fraction2Decimal());
+        // List<Integer> tmp = new ArrayList<Integer>(){{add(1); add(1); add(1);}};
+        // System.out.println(tmp.size() > new HashSet<>(tmp).size());
+        // Date date = new Date(1670465727L * 1000);
+        // System.out.println(date.toString());
+        // String template = "{\"facets\":[\"product_id\"],\"filters\":{\"product_id\":{\"equal\":%d}},\"fields\":{\"product_id\":{\"fields\":[\"publisher_id\", \"category_id\", \"package_name\"],\"category_id\":{\"fields\":[\"name\"]},\"publisher_id\":{\"fields\":[\"website\",\"company_id\"],\"company_id\":{\"fields\":[\"country_code\",\"website\"]}}}}}";
+        // String fill = String.format(template, 233333L);
+        // System.out.println(fill);
+        System.out.println("hhh" + "");
     }
 }
 
